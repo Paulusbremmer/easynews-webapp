@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import axios from 'axios';
-import { Search, Play, X, Film, Image as ImageIcon, ArrowDown, ArrowUp } from 'lucide-react';
+import { Search, Play, X, Film, Image as ImageIcon, ArrowDown, ArrowUp, Download } from 'lucide-react';
 import './index.css';
 
 const API_BASE = window.location.origin;
@@ -265,16 +265,18 @@ function App() {
           const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
           const isWindows = /Windows/i.test(navigator.userAgent);
           
+          const b64Mrl = btoa(r.url).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
+          const safeTitle = (r.title || 'video').replace(/[^a-z0-9]/gi, '_');
+          const safeFilename = encodeURIComponent(`${safeTitle}.${r.extension}`);
+          const proxyUrl = `${API_BASE}/vlc-proxy/${b64Mrl}/${safeFilename}`;
+
           let vlcHref = `${API_BASE}/vlc.m3u?url=${encodeURIComponent(r.url)}&title=${encodeURIComponent(r.title)}`;
           if (isAndroid) {
             vlcHref = `${API_BASE}/vlc-android?url=${encodeURIComponent(r.url)}`;
           } else if (isIOS) {
             vlcHref = `${API_BASE}/vlc-app?url=${encodeURIComponent(r.url)}`;
           } else if (isWindows) {
-            const b64Mrl = btoa(r.url).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-            const safeTitle = (r.title || 'video').replace(/[^a-z0-9]/gi, '_');
-            const filename = encodeURIComponent(`${safeTitle}.${r.extension}`);
-            vlcHref = `vlc:${API_BASE}/vlc-proxy/${b64Mrl}/${filename}`;
+            vlcHref = `vlc:${proxyUrl}`;
           }
 
           return (
@@ -287,15 +289,23 @@ function App() {
                   <span className="ext-badge">{r.extension}</span>
                 </div>
                 <div className="action-buttons" style={{ display: 'flex', gap: '8px', marginTop: '10px' }}>
-                  <button className="play-btn" onClick={() => handlePlay(r)} style={{ flex: 1 }}>
-                    <Play size={18} /> Play Now
+                  <button className="play-btn" onClick={() => handlePlay(r)} style={{ flex: 1, padding: '8px 4px', fontSize: '0.9rem' }}>
+                    <Play size={16} /> Play
                   </button>
                   <a 
                     className="play-btn" 
                     href={vlcHref}
-                    style={{ background: '#ff7300', textDecoration: 'none', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                    style={{ background: '#ff7300', textDecoration: 'none', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px 4px', fontSize: '0.9rem' }}
                   >
-                    <Play size={18} /> VLC
+                    <Play size={16} /> VLC
+                  </a>
+                  <a 
+                    className="play-btn" 
+                    href={`${proxyUrl}?download=1`}
+                    download
+                    style={{ background: '#28a745', textDecoration: 'none', flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '8px 4px', fontSize: '0.9rem' }}
+                  >
+                    <Download size={16} /> Save
                   </a>
                 </div>
               </div>

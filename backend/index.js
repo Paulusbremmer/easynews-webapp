@@ -173,7 +173,8 @@ app.get('/vlc-proxy/:b64mrl/:filename', async (req, res) => {
     if (response.headers['accept-ranges']) res.setHeader('Accept-Ranges', response.headers['accept-ranges']);
     if (response.headers['content-range']) res.setHeader('Content-Range', response.headers['content-range']);
     
-    res.setHeader('Content-Disposition', `inline; filename="${req.params.filename}"`);
+    const disposition = req.query.download ? 'attachment' : 'inline';
+    res.setHeader('Content-Disposition', `${disposition}; filename="${req.params.filename}"`);
     
     res.status(response.status);
     response.data.pipe(res);

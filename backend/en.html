@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <meta http-equiv="X-Theme" content="default" >
+   <!-- Enable IE9 Standards mode -->
+   <meta http-equiv="X-UA-Compatible" content="EmulateIE7" >
+   <title>Easynews Members Area</title>
+   <link rel="icon" href="/L4/favicon.ico" type="image/x-icon">
+
+<link href="/2.0/css/mem.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/2.0/js/jquery-ui-1.13.2/jquery-ui.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/2.0/css/magnific-popup.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/2.0/css/default.css" media="screen" rel="stylesheet" type="text/css" /><script type="text/javascript" src="/2.0/js/jquery-3.7.1.min.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery-migrate-3.3.2.min.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery-ui-1.13.2/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/2.0/js/magnific-popup-0.9.3.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery.tooltip.min.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery.shiftcheckbox.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery.address-1.5.js"></script>
+<script type="text/javascript" src="/2.0/js/members.js?nocache=fae3aaac9860a7b61d4357f8eb83b34f"></script>
+<script type="text/javascript" src="/2.0/js/dispJScript2.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery.scrollTo-1.4.2-min.js"></script>
+<script type="text/javascript" src="/2.0/js/jquery.localscroll-1.2.7-min.js"></script></head>
+ <body>
+ <script type="text/javascript" src="/2.0/js/wz_tooltip/wz_tooltip.js"></script>
+
+<div id="Header">
+
+   <div id="userInfo">
+      <div id="langload" style="display: none;"><img src="/img/ajax-small.gif" alt="language-alt"/></div>
+      <ul id="user">
+         <li class="item">
+            <label title="Go to the account profile page to manage your account.">
+                <a href="https://account.easynews.com/">Profile</a>
+            </label>
+         </li>|
+         <li class="item">
+            <label title="Go to the Easynews Messages page to view and manage your messages.">
+               <a href="/2.0/user/messages">Messages</a>
+            </label>
+         </li>|
+         <li class="item">
+               <label title="Exclude results from newsgroups known to contain adult content.">
+                  <a href="#" onclick="changeSB('zendSafe', 0);">Safe Mode</a>
+                  (<a href="#" onclick="changeSB('zendSafe', 0);"><span class="red">Off</span></a>)
+               </label>
+         </li>|
+         <li class="item">
+               <label title="Choose which area you would like to display main navigation.">
+                  <a href="#" onclick="changeSB('zendLayout', 1);">Navigation</a>
+                  (<a href="#" onclick="changeSB('zendLayout', 1);"><span>Left</span></a>)
+               </label>
+         </li>|
+         <li class="item"><a href="/logout.php">Logout</a>&nbsp;</li>|
+         <li class="item" id="langMenu" style="position: relative;"><img style="height: 12px;" src="/img/en.png" alt="language" />            <img alt="dropdown" src="/img/arrow-down.gif" />&nbsp;
+            <div id="lang">
+               <a onclick="changeLang('en');" >English<img class="middle" src="/img/en.png" alt="english" /></a><br />
+               <a onclick="changeLang('nl');" >Dutch<img class="middle" src="/img/nl.png" alt="dutch" /></a>
+            </div>
+         </li>
+      </ul>
+   </div>
+
+   <div id="topHolder"></div>
+   <div id="searchBar"></div>
+   <div id="mainMenu">
+      <ul id="mainItem">
+
+         <li class="mitem" id="helpClick" style="position: relative;">
+            <a class="hover"><img src="/img/help.png" alt="help-alt"/>Help <img src="/img/arrow-down.gif" alt="dropdown" class="middle"></a>
+            <div id="helpMenu">
+               <a href='https://help.easynews.com/'>Support</a><br />
+            </div>
+         </li>
+      </ul>
+   </div>
+</div>
+  <div id="content">
+   <div style="position: absolute; right: 0;">
+    <div id="helper"><a onclick="helper('en/search/index')"><img src="/img/help.png" style="vertical-align: bottom;" />  Help with this page</a></div>
+   </div>
+
+<div id="leftMenu">
+   <div class="moduleWrap">
+      <div class="moduleHeader"><h1 class="headertxt">Account Information</h1></div>
+
+      <div class="moduleContent">
+         <div class="content">
+            You have a EN Partner Plan 2TB Account.            <br/><br/>
+            <span>
+Currently, you have<br/><strong>2028.69 gigabytes </strong> <br/>remaining in your gig bank.<br/>            </span>
+            <br/>
+            <div class="rightLink">
+                <a href="https://www.easynews.com/edit/"><img src="/img/cog.png"  alt="cog-alt"/> View Your Account &raquo;</a>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="moduleWrap">
+      <div class="moduleHeader">
+         <h1 class="headertxt">My Easynews</h1>
+      </div>
+
+      <div class="moduleContent">
+         <div class="content">
+            <ul>
+               <li><a href="/2.0/"><img src="/img/magnifier.png"  alt="search-alt"/> Search</a></li>
+               <li><a href="/2.0/tools/zip-manager"><img src="/img/folder_wrench.png"  alt="zip-alt"/> Zip Manager</a></li>
+               <li><a href="https://account.easynews.com/editinfo.php?pg=2"><img src="/img/status_online.png"  alt="account-alt"/> My Account</a></li>
+               <li><a href="/2.0/user/prefs"><img src="/img/cog.png"  alt="preferences-alt"/> Preferences</a></li>
+               <li><a href="https://account.easynews.com/upgrade.php?pg=6" target="_new"><img src="/img/cog_add.png"  alt="upgrade-alt"/> Upgrade</a></li>
+               <li><a href="https://help.easynews.com"><img src="/img/help.png"  alt="help-alt"/> Customer Support</a></li>
+               <li><a href="https://account.easynews.com/survey.php" class="tooltip" title="Take our survey once a week for free gigs!"><img src="/img/script_edit.png"  alt="survey-alt"/> Survey</a></li>
+               <li><a href="/1.0/" class="tooltip" title="Visit the old Easynews members page!"><img src="/img/easynews_vintage_icon.jpg"  alt="vintage_easynews-alt"/> Easynews Vintage</a></li>
+            </ul>
+         </div>
+      </div>
+   </div>
+
+   <div class="moduleWrap">
+      <div class="moduleHeader">
+         <h1 class="headertxt">
+            <a href="/2.0/index/fav-groups">
+            My Favorites            <img src="/img/star.png"  alt="favorites-alt" />
+            </a>
+         </h1>
+         <div class="favstar"></div>
+      </div>
+
+      <div class="moduleContent">
+         <div class="content" id="favsUL">
+
+<a href="/2.0/index/groups" class="tooltip" title="Add Groups To Your Favorites"><i>Find Groups</i></a><div class="rightLink"><a href="/2.0/index/fav-groups"><img src="/img/cog.png"  alt="manage_favorites-alt"/> Manage&raquo;</a></div>         </div>
+      </div>
+   </div>
+
+   <div class="moduleWrap">
+      <div class="moduleHeader">
+         <h1 class="headertxt">Saved Searches</h1>
+      </div>
+
+      <div class="moduleContent">
+         <div class="content" id="savedSearchUL">
+            <div class="rightLink">
+                <a href="/2.0/user/saved-searches"><img src="/img/cog.png"  alt="manage_saved_searches-alt"/> Manage &raquo;</a>
+            </div>
+
+         </div>
+      </div>
+   </div>
+</div>
+   <div id="rightSide"><!-- [Begin Content] -->
+<!-- [End Content] -->
+   </div>
+  </div>
+
+<div id="feedback" title="Easynews Feedback" class="ui-dialog ui-widget ui-widget-content ui-corner-all  ui-draggable ui-resizable" style="display: none;">
+  <span class="ui-icon ui-icon-comment" style="float:left; margin: 0 7px 50px 0;"></span>
+  <form method="POST">
+    <p>Give us a general idea of your feedback</p>
+    <label for="subject"><strong>Subject:</strong></label>
+    <input type="text" size="40" id="subject" name="subject">
+    <br />
+    <br />
+    <p>In case we wanted to start a dialog</p>
+    <label for="sender"><strong>From (optional):</strong></label>
+    <input type="text" size="20" name="sender" id="sender">
+
+    <br />
+    <br />
+    <p>Your feedback.  Please be as detailed as possible when reporting bugs (links, or steps to reproduce).    Any and all feedback is encouraged</p>
+    <label for="message"><strong>Message:</strong></label>
+    <textarea  rows="20" cols="50" name="message" id="message"></textarea>
+    <br />
+  </form>
+  </p>
+</div>
+  <noscript>
+   <div id="noscript-warning">
+    <h1>Easynews works best with JavaScript enabled</h1>
+   </div>
+  </noscript>
+ </body>
+</html>

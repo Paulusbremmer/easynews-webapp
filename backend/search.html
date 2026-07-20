@@ -1,0 +1,339 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title> Easynews Global Search -</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script language="Javascript" type="text/javascript" src="/1.0/js/javascript.js"></script>
+ <link href="/1.0/css/search.css" rel="stylesheet" type="text/css" />
+<script language="Javascript" type="text/javascript"><!--
+function plusLink() {
+  if (confirm('You need to have an Easynews Plus account to access this content.\n Please click okay to be redirected to our upgrade and details page. ')) {
+    window.location = 'https://account.easynews.com/upgrade.php';
+  }
+  else {
+    return false;
+  }
+}
+function getFocus() {
+
+            document.global.gps.focus();
+         }
+
+
+         function clearForm() {
+
+            var f = document.global;
+
+            if (f.sbj)
+               f.sbj.value = "";
+
+            if (f.gps)
+               f.gps.value = "";
+
+            if (f.fil)
+               f.fil.value = "";
+
+            if (f.from)
+               f.from.value = "";
+
+            if (f.vc)
+               f.vc.value = "";
+
+            if (f.ac)
+               f.ac.value = "";
+
+            if (f.ns)
+               f.ns.value = "";
+
+            if (f.fex)
+               f.fex.value = "";
+
+            if (f.d1)
+               f.d1.value = "";
+
+            if (f.d2)
+               f.d2.value = "";
+
+            if (f.b1)
+               f.b1.value = "";
+
+            if (f.b2)
+               f.b2.value = "";
+
+            if (f.pby)
+               f.pby.value = 100;
+
+            if (f.pno)
+               f.pno.value = 1;
+
+            if (f.svL)
+               f.svL.value = "";
+
+            if (f.d1t)
+               f.d1t.selectedIndex = f.d1t.options[0];
+
+            if (f.d2t)
+               f.d2t.selectedIndex = f.d2t.options[0];
+
+            if (f.b1t)
+               f.b1t.selectedIndex = f.b1t.options[0];
+
+            if (f.b2t)
+               f.b2t.selectedIndex = f.b2t.options[0];
+
+            if (f.px1)
+               f.px1.value = "";
+
+            if (f.px2)
+               f.px2.value = "";
+
+            if (f.px1t)
+               f.px1t.selectedIndex = f.px1t.options[0]; //f.d1t.options[0];
+
+            if (f.px2t)
+               f.px2t.selectedIndex = f.px2t.options[0]; //f.d2t.options[0];
+
+            if (f.fps1)
+               f.fps1.value = "";
+
+            if (f.fps2)
+               f.fps2.value = "";
+
+            if (f.fps1t)
+               f.fps1t.selectedIndex = f.fps1t.options[0]; //f.b1t.options[0];
+
+            if (f.fps2t)
+               f.fps2t.selectedIndex = f.fps2t.options[0]; //f.b2t.options[0];
+
+            if (f.bps1)
+               f.bps1.value = "";
+
+            if (f.bps2)
+               f.bps2.value = "";
+
+            if (f.bps1t)
+               f.bps1t.selectedIndex = f.bps1t.options[0]; //f.d1t.options[0];
+
+            if (f.bps2t)
+               f.bps2t.selectedIndex = f.bps2t.options[0]; //f.d2t.options[0];
+
+            if (f.hz1)
+               f.hz1.value = "";
+
+            if (f.hz2)
+               f.hz2.value = "";
+
+            if (f.hz1t)
+               f.hz1t.selectedIndex = f.hz1t.options[0]; //f.b1t.options[0];
+
+            if (f.hz2t)
+               f.hz2t.selectedIndex = f.hz2t.options[0]; //f.b2t.options[0];
+
+            if (f.rn1)
+               f.rn1.value = "";
+
+            if (f.rn2)
+               f.rn2.value = "";
+
+            if (f.rn1t)
+               f.rn1t.selectedIndex = f.rn1t.options[0]; //f.b1t.options[0];
+
+            if (f.rn2t)
+               f.rn2t.selectedIndex = f.rn2t.options[0]; //f.b2t.options[0];
+
+            for (i =0; i<f.elements.length; i++) {
+               if (f[i].type == 'checkbox') {
+                  f[i].checked = false;
+               }
+            }
+
+            f.submit.disabled = false;
+            f.submit.value = "Search";
+            submitted = false;
+         }
+var noNav = false;
+var fileLoc = '';
+         //--></script>
+ <style type="text/css">
+ body { font-family: arial, sans-serif; font-size: x-small;background-color:#FFFFFF;color:#000000; }
+table { font-family: arial, sans-serif; font-size: x-small; }
+td.subject { font-size: x-small; }
+td.timeStamp { font-size: x-small; }
+td.group { font-size: x-small; }
+td.fSize { font-size: x-small; }
+td.fileName { font-size: x-small; }
+td.fileExt { font-size: x-small; }
+td.poster { font-size: x-small; }
+tr.rRow1 { background-color: #CCCCCC; color:#000000; }
+tr.rRow2 { background-color: #e5e5e5; color:#000000; }
+a {}
+a:link {}
+a:active {}
+a:visited {}
+a:hover {background-color:#999966;}
+th.header { background-color:#99CCFF;color:#999966;border-right:1px solid #6688aa;border-bottom:1px solid #6688aa; }
+input { font-family: arial, verdana, sans-serif; font-size: x-small; border-width: 1px;}
+select { font-family: arial, verdana, sans-serif; font-size: x-small; }
+option { font-family: arial, verdana, sans-serif; font-size: x-small; }
+
+         .tabs {margin:0; padding: 3px 0; border-bottom: 1px solid #778; font: bold 12px Verdana, sans-serif; background-color:#FFFFFF;}
+         .tabs li {list-style: none; margin: 0; display:inline;}
+         .tabs li a {padding: 3px 0.5em; margin-left: 3px; border: 1px solid #778; border-bottom: none; background: #DDE; }
+         .tabs a  {height: 27px; font:12px verdana, helvetica, sans-serif;font-weight:bold; position:relative; padding:6px 10px 10px 10px; margin: 0px -4px 0px 0px; color:#2B4353;border-left:1px solid #fff; border-right:1px solid #6D99B6;}
+         .tabs a:hover { background: #AEF; }
+         .tabs a.tab-active { background: #FFFFFF; border-bottom: 3px solid #FFFFFF; }
+         .tabs a.tab-activeF { background: #FFFFFF; border-bottom: 4px solid #FFFFFF;}
+         .tabs a.tab-inactiveF { background: #FFC; border-bottom: 3px solid #FFC;}
+         .tabs a.tab-disabledF { background: #DDE; border-bottom: 3px solid #DDE;}
+
+         .tabz {margin:0px; padding: 0px;border-bottom: 1px solid #778; font: bold 12px Verdana, sans-serif; background-color:#FFFFFF;}
+         .tabz li {list-style: none; margin: 0; display:inline;}
+         .tabz span.tab-active { font:12px verdana, helvetica, sans-serif;font-weight:bold; padding: 2px 0.5em; margin-left: 2px; border: 1px inset #778; background: transparent; border-bottom: 3px solid #FFFFFF; }
+         .tabz input.tab-active:hover { text-decoration:underline; border: 1px inset #778; background: #AEF; }
+         .tabz input.tab-inactive { text-decoration:underline; position:relative;font:12px verdana, helvetica, sans-serif;font-weight:bold; padding: 2px 0.5em; margin-left: 2px; border: 1px outset #778; background: #DDE; border-bottom: 1px solid #DDE;}
+         .tabz input.tab-inactive:hover { text-decoration:underline; border: 1px inset #778; background: #AEF; }
+         .tabz-container { margin-top:1em; background-color:#FFFFFF; }
+
+         .tab-container { margin-top:1em; visibility:hidden; background-color:#FFFFFF; }
+         .tab-panes { border: 1px solid #778; border-top: 0; background-color:#FFFFFF; }
+         .tab-panesfloat { position:absolute; background-color:#FFFFFF; border: 1px solid #778; border-top: 0; }
+         img.watermark { position: absolute; top: 0px; left: 0px; }
+         a.spamlink { text-decoration:line-through; background-color:#CC0000; }
+         a.headerlink { background-color:#CCCCCC; }
+         a.parlink { background-color:#66CC00;  }
+         a.nzblink { background-color:#FFCC66;  }
+         a.thumblink { background-color:#FF99CC;  }
+         .autounrarlink { background-color:#99CCFF; color:#000000; }
+         .autounparlink { background-color:#663366; color:#FFFFFF; }
+         a.nfolink { background-color:#996666;  }
+         a.mp3link { background-color:#FF6633;  }
+         a.archlink { background-color:#6633FF; }
+
+         table td span { display: inline-block; }</style>
+
+ </head>
+<!-- [FormLayout] (2:2 Column) -->
+ <body bgcolor="#FFFFFF" onLoad=";getFocus();">
+<script language="JavaScript" type="text/javascript" src="/2.0/js/easyplay.js"></script><script language="Javascript" type="text/javascript">easynews.addOnload(easynews.mp3preview.addTag);</script>
+ <!-- No alert --><p style="text-align:center;"><p style="text-align:center;"><a href="/1.0/messages.html">Messages</a> | <a href="/3.0/">Easynews Search</a> | <a href="https://account.easynews.com/" target="EZaccount">Your Account</a> | <a href="/1.0/?favorite=1">Favorites</a> | <a href="/1.0/zipmanager.html" target="zipmanager">Zip Manager</a> | <a href="/1.0/">Vintage Main Members Page</a> | <a href="/1.0/preferences.html" target="EZprefs">Vintage Preferences</a> | <a href="/1.0/global">Vintage Search</a></p>
+Form Layouts: <a href="/1.0/global5/search.html?fly=3">Basic</a> <a href="/1.0/global5/search.html?fly=1">Tabbed</a> <i><strong>2 Column</strong></i> 
+<form action="/1.0/global5/search.html" method="get" name="global" onSubmit="return check_submit(this)">
+<table><tr><td style="vertical-align:top;"><table><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search Subject, Filename and Poster fields">Keywords:</a></td><td><input tabindex="1" type="text" title="Keywords field search input" name="gps" size="80%" value=""></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search the subject field of posts">Subject:</a></td><td><input tabindex="2" type="text" title="Subject field search input" name="sbj" size="80%" value=""></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search the from field of posts">Poster:</a></td><td><input tabindex="3" type="text" title="Poster field search input" name="from" size="80%" value=""></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Specify newsgroups to search, blank for all">Newsgroups:</a></td><td><input tabindex="4" type="text" title="Newsgroups field search input" name="ns" size="80%" value=""></td></tr><tr>
+         <td valign="middle">
+            <a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search for filenames">Filename:</a> &nbsp;
+         </td>
+         <td nowrap>
+            <input tabindex="5" type="text" title="Filename field search input" name="fil" size="20%" value=""> &nbsp;<a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search for files with this extension">File Ext: </a> &nbsp;
+            <input tabindex="6" type="text" title="File Ext field search input" name="fex" size="20%" value="">
+         </td></tr>
+<tr>
+         <td valign="middle">
+            <a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search for Video Codec">VCodec:</a> &nbsp;
+         </td>
+         <td nowrap>
+            <input tabindex="7" type="text" title="VCodec field search input" name="vc" size="20%" value=""> &nbsp;<a href="/1.0/apphelp/en/index/advanced/gs20.html#fields" target="_blank" title="Search for Audio Codec">ACodec: </a> &nbsp;
+            <input tabindex="8" type="text" title="ACodec field search input" name="ac" size="20%" value="">
+         </td></tr>
+<tr><td><a href="filetypes.html" target="_blank" title="File Types, overwrites File Extension input">Type:</a></td><td><span style="white-space:nowrap"><input tabindex="9" class="checkbox" type="checkbox" id="chxidARCHIVE" name="fty[]" value="ARCHIVE" ><label for="chxidARCHIVE" title="rar|r[0-9]{2,3}|zip|ace|bz2|c[0-9]{2,3}|cab|cbz|cbr|gz|kar|s[0-9]{2,3}|sit|t[0-9]{2,3}|tar|tgz|z|z[0-9]{2,3}|[0-9][0-9][0-9]">ARCHIVE</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="10" class="checkbox" type="checkbox" id="chxidAUDIO" name="fty[]" value="AUDIO" ><label for="chxidAUDIO" title="mp3|m3u|ogg|ape|wav|wma|flac|mid|aif|m4a|it|lqt|mma|mod|ram|s3m|xm">AUDIO</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="11" class="checkbox" type="checkbox" id="chxidDOCUMENT" name="fty[]" value="DOCUMENT" ><label for="chxidDOCUMENT" title="nzb|txt|pdf|nfo|doc|asc|rtf|xls|epub">DOCUMENT</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="12" class="checkbox" type="checkbox" id="chxidVIDEO" name="fty[]" value="VIDEO" ><label for="chxidVIDEO" title="mpg|mpeg|avi|wmv|mp4|ogm|\.ts|asf|vob|asx|mov|mkv|ram|rmvb|001|\.qt|\.rm|swf|m2v|m4v|divx|flv|f4(v|p|a|b)">VIDEO</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="13" class="checkbox" type="checkbox" id="chxidEXECUTABLE" name="fty[]" value="EXECUTABLE" ><label for="chxidEXECUTABLE" title="exe|bat|com|asp|dll|chm|vb">EXECUTABLE</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="14" class="checkbox" type="checkbox" id="chxidIMAGE" name="fty[]" value="IMAGE" ><label for="chxidIMAGE" title="jpg|jpeg|png|gif|bmp|tga">IMAGE</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="15" class="checkbox" type="checkbox" id="chxidMISC" name="fty[]" value="MISC" ><label for="chxidMISC" title="crc|cue|dat|nes|pgp|smc|ttf">MISC</label></span> &nbsp;<span style="white-space:nowrap"><input tabindex="16" class="checkbox" type="checkbox" id="chxidPARITY" name="fty[]" value="PARITY" ><label for="chxidPARITY" title="par2|p[0-9]{2,3}|par|sfv|md5">PARITY</label></span> &nbsp;</td></tr><tr><td colspan="3"> Sort:<span style="white-space:nowrap">1st: <select name="s1" tabindex="17" > <option  value="nrfile">Filename</option>
+ <option  value="next">Extension</option>
+ <option  value="dsize">Size</option>
+ <option  value="xtime">Expire</option>
+ <option  value="dtime">Date & Time</option>
+ <option selected value="nsubject">Subject</option>
+ <option  value="nfrom">From</option>
+ <option  value="sgroup">Group</option>
+ <option  value="head">Header</option>
+ <option  value="thmparnzb">TPN</option>
+ <option  value="set">Set</option>
+ <option  value="svcodec">Video Codec</option>
+ <option  value="sacodec">Audio Codec</option>
+ <option  value="dpixels">Image Size</option>
+ <option  value="druntime">A/V Length</option>
+ <option  value="dbps">Bitrate</option>
+ <option  value="dhz">Sample rate</option>
+ <option  value="dfps">Frames per sec</option>
+ <option  value="otime">Day</option>
+ <option  value="status">Status</option>
+</select><select name="s1d" tabindex="18" ><option selected value="+">Asc</option>
+<option  value="-">Desc</option>
+</select> &nbsp; </span>
+            <span style="white-space:nowrap">2nd:<select name="s2" tabindex="19" > <option selected value="nrfile">Filename</option>
+ <option  value="next">Extension</option>
+ <option  value="dsize">Size</option>
+ <option  value="xtime">Expire</option>
+ <option  value="dtime">Date & Time</option>
+ <option  value="nsubject">Subject</option>
+ <option  value="nfrom">From</option>
+ <option  value="sgroup">Group</option>
+ <option  value="head">Header</option>
+ <option  value="thmparnzb">TPN</option>
+ <option  value="set">Set</option>
+ <option  value="svcodec">Video Codec</option>
+ <option  value="sacodec">Audio Codec</option>
+ <option  value="dpixels">Image Size</option>
+ <option  value="druntime">A/V Length</option>
+ <option  value="dbps">Bitrate</option>
+ <option  value="dhz">Sample rate</option>
+ <option  value="dfps">Frames per sec</option>
+ <option  value="otime">Day</option>
+ <option  value="status">Status</option>
+</select><select name="s2d" tabindex="20" ><option selected value="+">Asc</option>
+<option  value="-">Desc</option>
+</select> &nbsp; </span><span style="white-space:nowrap">3rd:<select name="s3" tabindex="21" > <option  value="nrfile">Filename</option>
+ <option  value="next">Extension</option>
+ <option selected value="dsize">Size</option>
+ <option  value="xtime">Expire</option>
+ <option  value="dtime">Date & Time</option>
+ <option  value="nsubject">Subject</option>
+ <option  value="nfrom">From</option>
+ <option  value="sgroup">Group</option>
+ <option  value="head">Header</option>
+ <option  value="thmparnzb">TPN</option>
+ <option  value="set">Set</option>
+ <option  value="svcodec">Video Codec</option>
+ <option  value="sacodec">Audio Codec</option>
+ <option  value="dpixels">Image Size</option>
+ <option  value="druntime">A/V Length</option>
+ <option  value="dbps">Bitrate</option>
+ <option  value="dhz">Sample rate</option>
+ <option  value="dfps">Frames per sec</option>
+ <option  value="otime">Day</option>
+ <option  value="status">Status</option>
+</select><select name="s3d" tabindex="22" ><option selected value="+">Asc</option>
+<option  value="-">Desc</option>
+</select></span></td></tr>
+<tr><td colspan="2" align="center">Results per Page:<input type="text" tabindex="23" name="pby" value="100" title="Number of results per page input" size="5%"> &nbsp;Result Page #: <input type="text" tabindex="24" name="pno" value="1" title="Specific page of results input" size="5%"> &nbsp;Output Style:  <select name="sS" tabindex="25" > <option value="0" selected>Standard</option><option value="1">Thumbnails</option><option value="2">Hybrid 1</option><option value="3">Hybrid 2</option><option value="4">Img Viewer</option><option value="5">RSS</option></select>
+&nbsp;&nbsp;</td></tr></table></td><td style="vertical-align:top;"><table><tr><td style="vertical-align:top;"><span style="white-space:nowrap;"><input class="checkbox" tabindex="27" type="checkbox" title="Don't use stemmed keywords, defaults to preference when displayed on the form" name="nostem" value="1" id="chxnostem"><label for="chxnostem" title="Don't use stemmed keywords, defaults to preference when displayed on the form">Disable Stemmed Keywords</label>
+</span><br/>
+<span style="white-space:nowrap;"><input class="checkbox" tabindex="28" type="checkbox" title="Show thumbnails in a tooltip" name="hthm" value="1" id="chxhthm"><label for="chxhthm" title="Show thumbnails in a tooltip">Hover Thumbnails</label>
+</span><br/>
+<span style="white-space:nowrap;"><input class="checkbox" tabindex="29" type="checkbox" title="Show post information in a tooltip" name="hInfo" value="1" id="chxhInfo"><label for="chxhInfo" title="Show post information in a tooltip">Hover Information</label>
+</span><br/>
+<span style="white-space:nowrap;"><input class="checkbox" tabindex="30" type="checkbox" title="Reduced page layout, less html" name="plain" value="1" id="chxplain"><label for="chxplain" title="Reduced page layout, less html">Light Output</label>
+</span><br/>
+<span style="white-space:nowrap;"><input class="checkbox" tabindex="31" type="checkbox" title="Save as a daily search" name="svS" value="1" id="chxsvS"><label for="chxsvS" title="Save as a daily search"><a href="/1.0/savedSrch.html" target="_blank">Save Search</a></label>
+</span><br/>
+<span style="white-space: nowrap; padding: 2px;">Save Label:<input type="text" size="5%" maxlength="50" name="svL" title="Label for saved Search" value=""></span><br/>
+<br/><br/><a href="/1.0/preferences.html?cat=s" target="_blank">Search Preferences</a><br/>
+</td></tr></table></td><td style="vertical-align:top;"><table><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#dateandtime" target="_blank" title="Make a date range for when the post hit our servers">Date & Time:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="32" type="text" size="20%" name="d1" title="LowerDate & Time input" value="" > <select tabindex="33" name="d1t"><option value="">Any</option><option value="1" >15 Minutes Ago</option><option value="2" >30 Minutes Ago</option><option value="3" >1 Hour Ago</option><option value="4" >4 Hours Ago</option><option value="5" >12 Hours Ago</option><option value="6" >1 Day Ago</option><option value="7" >2 Days Ago</option><option value="8" >3 Days Ago</option><option value="9" >4 Days Ago</option><option value="10" >5 Days Ago</option><option value="11" >6 Days Ago</option><option value="12" >1 Week Ago</option><option value="13" >2 Weeks Ago</option><option value="14" >3 Weeks Ago</option><option value="15" >4 Weeks Ago</option><option value="16" >5 Weeks Ago</option><option value="17" >6 Weeks Ago</option><option value="18" >2 Months Ago</option><option value="19" >3 Months Ago</option><option value="20" >4 Months Ago</option><option value="21" >5 Months Ago</option><option value="22" >6 Months Ago</option><option value="23" >7 Months Ago</option><option value="24" >8 Months Ago</option><option value="25" >9 Months Ago</option><option value="26" >10 Months Ago</option><option value="27" >11 Months Ago</option><option value="28" >1 Year Ago</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="34" type="text" size="20%" name="d2" title="Upper Date & Time input" value=""> <select tabindex="35" name="d2t"><option value="">Any</option><option value="1" >15 Minutes Ago</option><option value="2" >30 Minutes Ago</option><option value="3" >1 Hour Ago</option><option value="4" >4 Hours Ago</option><option value="5" >12 Hours Ago</option><option value="6" >1 Day Ago</option><option value="7" >2 Days Ago</option><option value="8" >3 Days Ago</option><option value="9" >4 Days Ago</option><option value="10" >5 Days Ago</option><option value="11" >6 Days Ago</option><option value="12" >1 Week Ago</option><option value="13" >2 Weeks Ago</option><option value="14" >3 Weeks Ago</option><option value="15" >4 Weeks Ago</option><option value="16" >5 Weeks Ago</option><option value="17" >6 Weeks Ago</option><option value="18" >2 Months Ago</option><option value="19" >3 Months Ago</option><option value="20" >4 Months Ago</option><option value="21" >5 Months Ago</option><option value="22" >6 Months Ago</option><option value="23" >7 Months Ago</option><option value="24" >8 Months Ago</option><option value="25" >9 Months Ago</option><option value="26" >10 Months Ago</option><option value="27" >11 Months Ago</option><option value="28" >1 Year Ago</option></select>
+</span></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#size" target="_blank" title="Make a byte range for the size of files returned">Size:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="36" type="text" size="20%" name="b1" title="LowerSize input" value="" > <select tabindex="37" name="b1t"><option value="">Any</option><option value="1" >1k</option><option value="2" >20k</option><option value="3" >50k</option><option value="4" >75k</option><option value="5" >100k</option><option value="6" >256k</option><option value="7" >512k</option><option value="8" >1M</option><option value="9" >5M</option><option value="10" >15M</option><option value="11" >25M</option><option value="12" >30M</option><option value="13" >40M</option><option value="14" >50M</option><option value="15" >75M</option><option value="16" >100M</option><option value="17" >200M</option><option value="18" >300M</option><option value="19" >400M</option><option value="20" >500M</option><option value="21" >750M</option><option value="22" >1G</option><option value="23" >1.5G</option><option value="24" >2G</option><option value="25" >2.5G</option><option value="26" >3G</option><option value="27" >3.5G</option><option value="28" >5G</option><option value="29" >4G</option><option value="30" >5G</option><option value="31" >6G</option><option value="32" >7G</option><option value="33" >8G</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="38" type="text" size="20%" name="b2" title="Upper Size input" value=""> <select tabindex="39" name="b2t"><option value="">Any</option><option value="1" >1k</option><option value="2" >20k</option><option value="3" >50k</option><option value="4" >75k</option><option value="5" >100k</option><option value="6" >256k</option><option value="7" >512k</option><option value="8" >1M</option><option value="9" >5M</option><option value="10" >15M</option><option value="11" >25M</option><option value="12" >30M</option><option value="13" >40M</option><option value="14" >50M</option><option value="15" >75M</option><option value="16" >100M</option><option value="17" >200M</option><option value="18" >300M</option><option value="19" >400M</option><option value="20" >500M</option><option value="21" >750M</option><option value="22" >1G</option><option value="23" >1.5G</option><option value="24" >2G</option><option value="25" >2.5G</option><option value="26" >3G</option><option value="27" >3.5G</option><option value="28" >5G</option><option value="29" >4G</option><option value="30" >5G</option><option value="31" >6G</option><option value="32" >7G</option><option value="33" >8G</option></select>
+</span></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#pixels" target="_blank" title="Make a pixel range for the pixel size of files returned">Pixels:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="40" type="text" size="20%" name="px1" title="LowerPixels input" value="" > <select tabindex="41" name="px1t"><option value="">Any</option><option value="1" >96x96</option><option value="2" >128x128</option><option value="3" >256x256</option><option value="4" >320x240</option><option value="5" >640x480</option><option value="6" >800x600</option><option value="7" >1024x768</option><option value="8" >1280x720</option><option value="9" >1600x900</option><option value="10" >1920x1080</option><option value="11" >1920x1200</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="42" type="text" size="20%" name="px2" title="Upper Pixels input" value=""> <select tabindex="43" name="px2t"><option value="">Any</option><option value="1" >96x96</option><option value="2" >128x128</option><option value="3" >256x256</option><option value="4" >320x240</option><option value="5" >640x480</option><option value="6" >800x600</option><option value="7" >1024x768</option><option value="8" >1280x720</option><option value="9" >1600x900</option><option value="10" >1920x1080</option><option value="11" >1920x1200</option></select>
+</span></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#rangeother" target="_blank" title="Make a Frames Per Second range for the fps of files returned">FPS:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="44" type="text" size="20%" name="fps1" title="LowerFPS input" value="" > <select tabindex="45" name="fps1t"><option value="">Any</option><option value="1" >5</option><option value="2" >10</option><option value="3" >15</option><option value="4" >20</option><option value="5" >30</option><option value="6" >45</option><option value="7" >60</option><option value="8" >90</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="46" type="text" size="20%" name="fps2" title="Upper FPS input" value=""> <select tabindex="47" name="fps2t"><option value="">Any</option><option value="1" >5</option><option value="2" >10</option><option value="3" >15</option><option value="4" >20</option><option value="5" >30</option><option value="6" >45</option><option value="7" >60</option><option value="8" >90</option></select>
+</span></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#rangeother" target="_blank" title="Make a Bits per second for the bps of files returned">Bitrate:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="48" type="text" size="20%" name="bps1" title="LowerBitrate input" value="" > <select tabindex="49" name="bps1t"><option value="">Any</option><option value="1" >8</option><option value="2" >16</option><option value="3" >24</option><option value="4" >32</option><option value="5" >48</option><option value="6" >64</option><option value="7" >96</option><option value="8" >128</option><option value="9" >256</option><option value="10" >384</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="50" type="text" size="20%" name="bps2" title="Upper Bitrate input" value=""> <select tabindex="51" name="bps2t"><option value="">Any</option><option value="1" >8</option><option value="2" >16</option><option value="3" >24</option><option value="4" >32</option><option value="5" >48</option><option value="6" >64</option><option value="7" >96</option><option value="8" >128</option><option value="9" >256</option><option value="10" >384</option></select>
+</span></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#rangeother" target="_blank" title="Make a frequency range for the hz of files returned">Hz:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="52" type="text" size="20%" name="hz1" title="LowerHz input" value="" > <select tabindex="53" name="hz1t"><option value="">Any</option><option value="1" >8000</option><option value="2" >11025</option><option value="3" >12000</option><option value="4" >16000</option><option value="5" >22050</option><option value="6" >24000</option><option value="7" >32000</option><option value="8" >44100</option><option value="9" >48000</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="54" type="text" size="20%" name="hz2" title="Upper Hz input" value=""> <select tabindex="55" name="hz2t"><option value="">Any</option><option value="1" >8000</option><option value="2" >11025</option><option value="3" >12000</option><option value="4" >16000</option><option value="5" >22050</option><option value="6" >24000</option><option value="7" >32000</option><option value="8" >44100</option><option value="9" >48000</option></select>
+</span></td></tr><tr><td><a href="/1.0/apphelp/en/index/advanced/gs20.html#rangeother" target="_blank" title="Make a runtime range for the runtime length of files returned">Runtime:</a></td><td nowrap><span style="white-space:nowrap"><input tabindex="56" type="text" size="20%" name="rn1" title="LowerRuntime input" value="" > <select tabindex="57" name="rn1t"><option value="">Any</option><option value="1" >5</option><option value="2" >10</option><option value="3" >30</option><option value="4" >60</option><option value="5" >90</option><option value="6" >1800</option><option value="7" >3600</option><option value="8" >7200</option><option value="9" >9000</option></select>
+</span> to <span style="white-space:nowrap"><input tabindex="58" type="text" size="20%" name="rn2" title="Upper Runtime input" value=""> <select tabindex="59" name="rn2t"><option value="">Any</option><option value="1" >5</option><option value="2" >10</option><option value="3" >30</option><option value="4" >60</option><option value="5" >90</option><option value="6" >1800</option><option value="7" >3600</option><option value="8" >7200</option><option value="9" >9000</option></select>
+</span></td></tr><tr><td style="text-align:center;" colspan="4"></td></tr><tr><td colspan="4"><div style="text-align:center;"><a href="/1.0/apphelp/en/index/advanced/gs20.html" target="_blank">-Click here for Search Form Help-</a></div></td></tr></table></td><td style="vertical-align:top;"><table><tr></tr></table></td></tr><tr><td colspan="3" style="text-align:center; vertical-align:top;"><input type="submit" tabindex="60" name="submit" value="Search">  &nbsp;<input type="button" tabindex="61" onClick="clearForm();" value="Clear"> &nbsp;<input type="reset" onClick="submitted=false;document.global.submit.disabled = false;document.global.submit.value = 'Search'" tabindex="62"></td></tr>
+</table><input type="hidden" name="fly" value="2">
+</form>
+<p style="text-align:center;"><p style="text-align:center;"><a href="/1.0/messages.html">Messages</a> | <a href="/3.0/">Easynews Search</a> | <a href="https://account.easynews.com/" target="EZaccount">Your Account</a> | <a href="/1.0/?favorite=1">Favorites</a> | <a href="/1.0/zipmanager.html" target="zipmanager">Zip Manager</a> | <a href="/1.0/">Vintage Main Members Page</a> | <a href="/1.0/preferences.html" target="EZprefs">Vintage Preferences</a> | <a href="/1.0/global">Vintage Search</a></p>
+
+</body>
+
+</html>

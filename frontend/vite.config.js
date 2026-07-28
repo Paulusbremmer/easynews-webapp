@@ -7,14 +7,10 @@ export default defineConfig({
   server: {
     allowedHosts: ['easynews.bossdwarf.win'],
     proxy: {
-      '/api': 'http://127.0.0.1:3002',
-      '/stream': 'http://127.0.0.1:3002',
-      '/vlc.m3u': 'http://127.0.0.1:3002',
-      '/vlc-proxy': 'http://127.0.0.1:3002',
-      '/vlc-android': 'http://127.0.0.1:3002',
-      '/vlc-app': 'http://127.0.0.1:3002',
-      '/vlc-redirect': 'http://127.0.0.1:3002',
-      '/windows-vlc.reg': 'http://127.0.0.1:3002'
+      '^/(api|stream|vlc\\.m3u|vlc-proxy|vlc-android|vlc-app|vlc-redirect|windows-vlc\\.reg)': {
+        target: 'http://127.0.0.1:3002',
+        xfwd: true
+      }
     }
   }
 })

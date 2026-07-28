@@ -164,7 +164,7 @@ function App() {
         <h1><Film style={{display: 'inline', marginRight: '10px'}} size={36}/>Easynews Streamer</h1>
         {/Windows/i.test(navigator.userAgent) && (
           <div style={{ fontSize: '0.85rem', marginTop: '-10px', marginBottom: '20px' }}>
-            <a href={`${API_BASE}/windows-vlc.reg?base=${encodeURIComponent(API_BASE)}&t=${Date.now()}`} style={{ color: 'var(--accent)', textDecoration: 'underline' }} download>
+            <a href={`${API_BASE}/windows-vlc.reg?t=${Date.now()}`} style={{ color: 'var(--accent)', textDecoration: 'underline' }} download>
               Download Windows 1-Click VLC Setup (.reg)
             </a>
           </div>

@@ -6,6 +6,7 @@ const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
+app.set('trust proxy', true);
 app.use(cors());
 
 const USERNAME = process.env.EASYNEWS_USERNAME || '745861@eweka.nl';
@@ -205,12 +206,9 @@ app.get('/windows-vlc.reg', (req, res) => {
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
   
-  let apiBase = req.query.base;
-  if (!apiBase) {
-    const host = req.get('X-Forwarded-Host') || req.get('host');
-    const protocol = req.get('X-Forwarded-Proto') || req.protocol;
-    apiBase = `${protocol}://${host}`;
-  }
+  const host = req.get('X-Forwarded-Host') || req.get('host');
+  const protocol = req.get('X-Forwarded-Proto') || req.protocol;
+  const apiBase = `${protocol}://${host}`;
 
   const regContent = `Windows Registry Editor Version 5.00
 

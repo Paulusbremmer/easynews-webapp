@@ -13,6 +13,7 @@ export default defineConfig({
       '/vlc-proxy': 'http://127.0.0.1:3002',
       '/vlc-android': 'http://127.0.0.1:3002',
       '/vlc-app': 'http://127.0.0.1:3002',
+      '/vlc-redirect': 'http://127.0.0.1:3002',
       '/windows-vlc.reg': 'http://127.0.0.1:3002'
     }
   }

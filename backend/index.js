@@ -201,9 +201,12 @@ app.get('/windows-vlc.reg', (req, res) => {
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
   
-  const host = req.get('host');
-  const protocol = req.protocol;
-  const apiBase = `${protocol}://${host}`;
+  let apiBase = req.query.base;
+  if (!apiBase) {
+    const host = req.get('X-Forwarded-Host') || req.get('host');
+    const protocol = req.get('X-Forwarded-Proto') || req.protocol;
+    apiBase = `${protocol}://${host}`;
+  }
 
   const regContent = `Windows Registry Editor Version 5.00
 
